@@ -29,22 +29,53 @@ class _HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const textStyle = TextStyle(
+      fontSize: 16,
+      color: Colors.black,
+    );
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
         children: [
           SizedBox(height: 25),
+          _FormWidget(),
+          SizedBox(height: 25),
           Text(
             'In order to use the editing and rating capabilities of TMDb, as well as get personal recommendations you will need to login to your account. If you do not have an account, registering for an account is free and simple.',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.black,
-            ),
+            style: textStyle,
           ),
           SizedBox(height: 25),
-          Text('If you signed up but didn`t get your verification email.'),
+          Text(
+            'If you signed up but didn`t get your verification email.',
+            style: textStyle,
+          ),
         ],
       ),
+    );
+  }
+}
+
+class _FormWidget extends StatefulWidget {
+  const _FormWidget({super.key});
+
+  @override
+  State<_FormWidget> createState() => __FormWidgetState();
+}
+
+class __FormWidgetState extends State<_FormWidget> {
+  @override
+  Widget build(BuildContext context) {
+    const textStyle = TextStyle(
+      fontSize: 16,
+      color: Colors.black,
+    );
+    return Column(
+      children: [
+        Text('Username'),
+        TextField(),
+        Text('Password'),
+        TextField(),
+      ],
     );
   }
 }
