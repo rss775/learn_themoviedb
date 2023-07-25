@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:themoviedb/Theme/app_colors.dart';
 import 'package:themoviedb/widgets/auth/auth_widget.dart';
 import 'package:themoviedb/widgets/main_screen/main_screen_widget.dart';
 
@@ -16,37 +17,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        // useMaterial3: true,
-
-        // appBarTheme: const AppBarTheme(
-        //   backgroundColor: Color.fromARGB(3, 37, 65, 1),
-        // ),
-        // primarySwatch: Colors.red),
-
-        // primaryColor: Color(0xFF090C22),
-        // backgroundColor: Color(0xFF090C22),
-        // scaffoldBackgroundColor: Color(0xFF090C22),
-        // test commit
-        platform: TargetPlatform.iOS,
-        appBarTheme: const AppBarTheme(
-          backgroundColor: Color.fromRGBO(3, 37, 65, 1),
-        ),
-      ),
+          platform: TargetPlatform.iOS,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: AppColors.mainDarkBlue,
+          ),
+          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+            backgroundColor: AppColors.mainDarkBlue,
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.grey,
+          )),
       routes: {
         '/auth': (context) => const AuthWidget(),
         '/main_screen': (context) => const MainScreenWidget(),
       },
       initialRoute: '/auth',
-      onGenerateRoute: (RouteSettings settings) {
-        return MaterialPageRoute(builder: (context) {
-          return Scaffold(
-            body: Center(
-              child: Text('Произошла ошибка навигации'),
-            ),
-          );
-        });
-      },
     );
   }
 }
