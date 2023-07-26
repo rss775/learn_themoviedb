@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:themoviedb/widgets/movie_list/movie_list_widget.dart';
 
 class MainScreenWidget extends StatefulWidget {
   const MainScreenWidget({super.key});
@@ -14,6 +15,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
     Text(
       'Новости',
     ),
+    MovieListWidget(),
     Text(
       'Фильмы',
     ),
